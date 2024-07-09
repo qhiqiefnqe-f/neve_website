@@ -136,14 +136,14 @@
   border-radius: 4px;
 }
 
-.value:not(:active):hover,
+.value:hover,
 .value:focus {
-  background-color: #464646;
+  background-color: #222222;
 }
 
 .value:focus,
 .value:active {
-  background-color: #828282;
+  background-color: #53535f;
   outline: none;
 }
 
@@ -176,8 +176,9 @@
   height: 80%;
 }
 .avatar {
-  width: 55px;
-  height: 55px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
   border-radius: 15%;
   background-image: url(../assets/qq_pic_merged_1720493142583.jpg);
   background-size: cover;
@@ -197,7 +198,7 @@
 
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 10px;
   background-color: #171717;
   color: black;
 }
