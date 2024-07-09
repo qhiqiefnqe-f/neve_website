@@ -28,14 +28,17 @@ onMounted(() => {
 
 .container {
   display: flex;
-  flex-direction: column;
+
   height: 800px;
 }
 
 .main {
   flex-grow: 1;
   display: flex;
-
-  background: white;
+  margin-left: 100px; /* 设置左边距等于导航栏的宽度 */
+  overflow-y: auto; /* 允许内容垂直滚动 */
+  height: 100vh;
+  background: #212121;
+  color: white;
 }
 </style>
