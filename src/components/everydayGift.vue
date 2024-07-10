@@ -274,7 +274,7 @@ import EverydayArticle from './everydayArticle.vue'
   margin-right: 15px;
   height: 300px;
   letter-spacing: 17px;
-  background: linear-gradient(to bottom, #92cb8a, #3dc9bc);
+  background: linear-gradient(to bottom, #d24dec, #805bff);
   /* 将背景剪裁到文本 */
   -webkit-background-clip: text;
   background-clip: text;

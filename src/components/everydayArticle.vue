@@ -60,6 +60,6 @@
 }
 
 .articleBox:hover {
-  background-color: #252525;
+  background-color: #303030;
 }
 </style>
