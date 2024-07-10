@@ -1,5 +1,6 @@
 <script setup>
 import everydayGift from '@/components/everydayGift.vue'
+import foryou from '@/components/foryou.vue'
 import explore from '@/components/explore.vue'
 </script>
 
@@ -8,6 +9,7 @@ import explore from '@/components/explore.vue'
 <template>
   <div class="container">
     <everydayGift />
+    <foryou />
     <explore />
   </div>
 </template>
