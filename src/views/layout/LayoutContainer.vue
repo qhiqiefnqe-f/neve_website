@@ -41,13 +41,13 @@ onMounted(() => {
 }
 
 .main {
-  width: 100%;
+  width: calc(100% - 100px);
 
-  display: flex;
   margin-left: 100px;
   margin-top: 60px;
-  overflow-y: auto; /* 允许内容垂直滚动 */
-  height: 100vh;
+  /* 允许内容垂直滚动 */
+
+  height: calc(100vh - 60px);
   background: #171717;
   color: white;
 }

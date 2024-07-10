@@ -134,6 +134,9 @@
   gap: 5px;
   cursor: pointer;
   border-radius: 4px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .value:hover,

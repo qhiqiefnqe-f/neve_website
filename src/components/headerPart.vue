@@ -161,7 +161,7 @@
 }
 .headerPart {
   /* 其他样式 */
-  backdrop-filter: saturate(180%) blur(30px); /* 添加毛玻璃效果 */
+  backdrop-filter: saturate(180%) blur(20px); /* 添加毛玻璃效果 */
   /* 针对旧版Safari浏览器的兼容性 */
   background-color: rgba(23, 23, 23, 0.2); /* 轻微的背景颜色，增强毛玻璃效果 */
   z-index: 100;
