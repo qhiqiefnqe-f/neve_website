@@ -19,14 +19,21 @@ import exploreCard from '@/components/exploreCard.vue'
       <exploreCard />
       <exploreCard />
       <exploreCard />
+      <exploreCard />
+      <exploreCard />
+      <exploreCard />
+      <exploreCard />
+      <exploreCard />
     </div>
   </div>
 </template>
 
 <style>
 .exploreMain {
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20px;
   width: 100%;
 
