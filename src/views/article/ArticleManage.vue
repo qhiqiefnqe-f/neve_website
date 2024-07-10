@@ -1,18 +1,18 @@
+<script setup></script>
+import { ref } from 'vue' ; import everydayGift from
+'@/components/everydayGift.vue';
+<style></style>
+
 <template>
-  <div>
-    我是文章管理
-    <div class="imgdiv"></div>
+  <div class="container">
+    <everydayGift />
   </div>
 </template>
 
-<script setup></script>
-
-<style></style>
-
 <style>
-.imgdiv {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: #171717;
 }
 </style>

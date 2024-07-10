@@ -41,13 +41,14 @@ onMounted(() => {
 }
 
 .main {
-  flex-grow: 1;
+  width: 100%;
+
   display: flex;
   margin-left: 100px;
   margin-top: 60px;
   overflow-y: auto; /* 允许内容垂直滚动 */
   height: 100vh;
-  background: #212121;
+  background: #171717;
   color: white;
 }
 </style>

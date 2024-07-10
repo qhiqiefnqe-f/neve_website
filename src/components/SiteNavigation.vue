@@ -191,10 +191,11 @@
   top: 0;
   left: 0;
   padding: 40px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
   flex-direction: column;
   height: 100%;
   width: 100px;
+  box-shadow: 4px 5px 20px rgba(255, 255, 255, 0.1);
 
   justify-content: space-between;
   align-items: center;
