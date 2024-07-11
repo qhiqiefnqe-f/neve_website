@@ -45,16 +45,14 @@
 .exploreCardContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 5px;
+
   border-radius: 10px;
   width: 23.6%;
-  height: 230px;
+  height: 210px;
   background: #252525;
 }
 
 .exploreCard {
-  margin-top: 10px;
   width: 100%;
   height: 120px;
   background: linear-gradient(270deg, #ce68d9, #45c6db, #45db79);
@@ -63,7 +61,7 @@
   -moz-animation: AnimationName 3s ease infinite;
   animation: AnimationName 3s ease infinite;
   transition: 0.4s ease-in-out;
-  border-radius: 7px;
+  border-radius: 10px 10px 0 0;
   cursor: pointer;
 }
 
@@ -121,6 +119,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 1em;
+  margin-left: 1em;
 }
 
 .img {
@@ -150,6 +149,7 @@
 }
 
 .btns {
+  margin-left: 1em;
   display: flex;
   gap: 0.5em;
   transition: 0.2s ease-in-out;
