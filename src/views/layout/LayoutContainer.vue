@@ -15,9 +15,8 @@ onMounted(() => {
   <div class="container">
     <Sitenav />
     <HeaderPart />
-    <div class="main">
-      <router-view />
-    </div>
+
+    <router-view />
   </div>
 </template>
 
@@ -38,17 +37,5 @@ onMounted(() => {
   display: flex;
 
   height: 100vh;
-}
-
-.main {
-  width: calc(100% - 100px);
-
-  margin-left: 100px;
-  margin-top: 60px;
-  /* 允许内容垂直滚动 */
-
-  height: calc(100vh - 60px);
-  background: #171717;
-  color: white;
 }
 </style>

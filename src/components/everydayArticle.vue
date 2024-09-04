@@ -16,7 +16,7 @@
 
 <script setup></script>
 
-<style>
+<style scoped>
 .boxavatar {
   display: inline-block;
   width: 40px;

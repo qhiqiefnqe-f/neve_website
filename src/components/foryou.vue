@@ -8,12 +8,12 @@ import cardsPart from '@/components/cardsPart.vue'
   </div>
 </template>
 
-<style>
+<style scoped>
 .foryouContainer {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  height: 1000px;
+  height: 450px;
   width: 100%;
   background-color: #171717;
 }

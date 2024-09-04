@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .cards {
   display: flex;
   flex-direction: row;

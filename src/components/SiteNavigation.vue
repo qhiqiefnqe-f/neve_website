@@ -112,7 +112,7 @@
 
 <script setup></script>
 
-<style>
+<style scoped>
 .input {
   display: flex;
   flex-direction: column;

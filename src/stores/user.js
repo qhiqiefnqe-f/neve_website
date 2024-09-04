@@ -3,14 +3,23 @@ import { ref } from 'vue'
 
 // 用户模块
 export const useUserStore = defineStore(
-  'big-user',
+  'user',
   () => {
-    const token = ref('') // 定义 token
-    const setToken = (t) => (token.value = t) // 设置 token
+    const token = ref(localStorage.getItem('token') || '')
+    const setToken = (newToken) => {
+      token.value = newToken
+    }
+    const removeToken = () => {
+      token.value = ''
+    }
 
-    return { token, setToken }
+    return {
+      token,
+      setToken,
+      removeToken
+    }
   },
   {
-    persist: true // 持久化
+    persist: true // 将状态持久化
   }
 )

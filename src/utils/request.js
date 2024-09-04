@@ -3,7 +3,7 @@ import { useUserStore } from '@/stores'
 import { ElMessage } from 'element-plus'
 import router from '@/router'
 
-const baseURL = 'http://big-event-vue-api-t.itheima.net'
+const baseURL = 'http://localhost:80'
 
 const instance = axios.create({
   // TODO 1. 基础地址，超时时间
@@ -20,7 +20,10 @@ instance.interceptors.request.use(
     }
     return config
   },
-  (err) => Promise.reject(err)
+  (err) => {
+    console.log(err)
+    Promise.reject(err)
+  }
 )
 
 //响应拦截器
@@ -28,10 +31,11 @@ instance.interceptors.response.use(
   (res) => {
     // TODO 3. 处理业务失败
     // TODO 4. 摘取核心响应数据
-    if (res.data.code == 0) {
+    if (res.data.status == 0) {
       return res
     }
     ElMessage.error(res.data.message || '未知错误')
+    console.log(res)
     return Promise.reject(res.data)
   },
   (err) => {
@@ -45,6 +49,7 @@ instance.interceptors.response.use(
       router.push('/login')
       //默认情况，给提示就行
       ElMessage.error(err.response.data.message || '未知错误')
+      console.log(err)
       return Promise.reject(err)
     }
   }

@@ -47,7 +47,7 @@ import exploreCard from '@/components/exploreCard.vue'
   </div>
 </template>
 
-<style>
+<style scoped>
 .refreshButton {
   margin-left: 385px;
   color: white;
@@ -116,7 +116,7 @@ import exploreCard from '@/components/exploreCard.vue'
   display: flex;
   flex-direction: column;
   padding: 20px;
-  height: 1000px;
+  height: 600px;
   width: 100%;
   background-color: #171717;
 }

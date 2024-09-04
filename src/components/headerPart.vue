@@ -1,6 +1,6 @@
 <template>
   <div class="headerPart">
-    <div class="logo">Dreaver</div>
+    <div class="logo">Neve</div>
     <div class="rightpart">
       <div class="toggle-switch">
         <label class="switch-label">
@@ -34,7 +34,7 @@
 </template>
 <script setup></script>
 
-<style>
+<style scoped>
 .toggle-switch {
   position: relative;
   width: 80px;

@@ -4,7 +4,7 @@
 
 <script setup></script>
 
-<style>
+<style scoped>
 .classButton {
   margin-top: 15px;
   margin-left: 10px;

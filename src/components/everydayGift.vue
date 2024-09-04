@@ -82,7 +82,7 @@ import EverydayArticle from './everydayArticle.vue'
   </div>
 </template>
 
-<style>
+<style scoped>
 .refreshbutton {
   width: 30px;
   height: 30px;

@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .exploreCardContainer {
   display: flex;
   flex-direction: column;

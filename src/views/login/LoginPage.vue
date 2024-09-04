@@ -1,10 +1,46 @@
 <script setup>
 import { ref } from 'vue'
+import { userRegisterService, userLoginService } from '@/api/user'
+import { useRouter } from 'vue-router'
+const email = ref('')
+const password = ref('')
+const router = useRouter()
 
 const isRegister = ref(true)
-const register = () => {
+const toRegister = () => {
   isRegister.value = !isRegister.value
   console.log('register')
+}
+const register = () => {
+  const response = userRegisterService({
+    username: email.value,
+    password: password.value
+  })
+  console.log('注册结果', response)
+
+  // 在这里添加注册成功后重定向
+  if (response) {
+    router.push('/')
+  }
+}
+
+const login = async () => {
+  try {
+    const response = await userLoginService({
+      username: email.value,
+      password: password.value
+    })
+    console.log('登录结果', response)
+
+    // 在这里添加登录成功后重定向
+    if (response.status === 0) {
+      router.push('/')
+    } else {
+      console.error('登录失败', response.msg)
+    }
+  } catch (error) {
+    console.error('登录过程中发生错误', error)
+  }
 }
 </script>
 
@@ -15,67 +51,45 @@ const register = () => {
         <h1>登录</h1>
         <small>Take your art to the next level. Get it</small>
         <small>seen by millions of people</small>
-        <button class="signingithub">
-          Login with Github
-          <svg
-            class="svg-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="25px"
-            height="25px"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
-            />
-          </svg>
-        </button>
-        <h2>-or-</h2>
+
         <div class="input-container">
-          <input type="text" id="input1" required="" />
+          <input type="text" id="input1" required="" v-model="email" />
           <label for="input" class="label">Email</label>
           <div class="underline"></div>
         </div>
+        <small>-and-</small>
         <div class="input-container">
-          <input type="password" id="input2" required="" />
+          <input type="password" id="input2" required="" v-model="password" />
           <label for="input" class="label">Password</label>
           <div class="underline"></div>
         </div>
-        <button class="start">start!</button>
+        <button class="start" @click="login">start!</button>
         <small
           >Don't have an account?
-          <a href="#" @click="register">Sign up</a></small
+          <a href="#" @click="toRegister">Sign up</a></small
         >
       </div>
 
       <div class="main" v-else>
         <h1>注册</h1>
-        <small>Take your art to the next level. Get it</small>
-        <small>seen by millions of people</small>
-
-        <label for="usernameField" class="usernamelabel label">Username</label>
-        <input
-          type="text"
-          placeholder="@ input your username"
-          id="usernameField"
-          required="required"
-        />
-        <h2>-and-</h2>
+        <small>Dream as if you'll live forrever</small>
+        <small>Live as if you'll die today</small>
 
         <div class="input-container">
-          <input type="text" id="input1" required="" />
+          <input type="text" id="input1" required="" v-model="email" />
           <label for="input" class="label">Email</label>
           <div class="underline"></div>
         </div>
+        <small>-and-</small>
         <div class="input-container">
-          <input type="password" id="input2" required="" />
+          <input type="password" id="input2" required="" v-model="password" />
           <label for="input" class="label">Password</label>
           <div class="underline"></div>
         </div>
-        <button class="start">Remember</button>
+        <button class="start" @click="register">Remember me</button>
         <small
           >Already have an account?
-          <a href="#" @click="register">Login</a></small
+          <a href="#" @click="toRegister">Login</a></small
         >
       </div>
     </Transition>
@@ -88,6 +102,9 @@ const register = () => {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+.empty {
+  height: 20px;
 }
 .usernamelabel {
   display: block;
@@ -144,7 +161,7 @@ h2 {
 
 small {
   margin-top: 1px;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 a {
@@ -156,7 +173,7 @@ button.start {
   --color: #560bad;
   font-family: inherit;
   display: inline-block;
-  width: 8em;
+  width: 40%;
   height: 2.6em;
   line-height: 2.5em;
   margin: 20px;
@@ -177,7 +194,7 @@ button.start:before {
   z-index: -1;
   background: var(--color);
   height: 150px;
-  width: 200px;
+  width: 220px;
   border-radius: 50%;
 }
 
@@ -203,7 +220,7 @@ button.start:active:before {
 
 .input-container {
   position: relative;
-  margin: 10px auto;
+  margin: 30px auto;
   width: 250px;
 }
 
@@ -301,7 +318,7 @@ button.start:active:before {
   padding: 40px;
   background: white;
   min-width: 400px;
-  width: 40%;
+  width: 35%;
   height: 80%;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
